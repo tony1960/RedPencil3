@@ -186,4 +186,35 @@ public class PromotionTest {
         assertFalse("Promotion", result);
     }
 
+    // Test if a promotioin is Valid
+    //
+    @Test
+    public void testpromotionValid() {
+        System.out.println("testpromotionValid");
+        int days = 29;
+        instance.InitialStableDays(days);
+        Boolean result = instance.promotionValid();
+        assertFalse("Promotion", result);
+
+    }
+
+    @Test
+    public void testpromotionValidEndPoint() {
+        System.out.println("testpromotionValidMoreDays");
+        int days = 30;
+        instance.InitialStableDays(days);
+        Boolean result = instance.promotionValid();
+        assertFalse("Promotion", result);
+    }
+
+    @Test
+    public void testpromotionValidMoreDays() {
+        System.out.println("testpromotionValidMoreDays");
+        int days = 31;
+        instance.InitialStableDays(days);
+        Boolean result = instance.promotionValid();
+        assertTrue("Promotion", result);
+    }
+
+    // 
 }
