@@ -18,6 +18,8 @@ import static org.junit.Assert.*;
  */
 public class PromotionTest {
 
+    Promotion instance;
+
     public PromotionTest() {
     }
 
@@ -31,6 +33,8 @@ public class PromotionTest {
 
     @Before
     public void setUp() {
+        instance = new Promotion();
+
     }
 
     @After
@@ -40,7 +44,6 @@ public class PromotionTest {
     @Test
     public void testInitialStableDays() {
         System.out.println("testInitialStableDays");
-        Promotion instance = new Promotion();
         int days = 0;
         int expectedResult = 29;
         instance.InitialStableDays(29);
@@ -52,8 +55,6 @@ public class PromotionTest {
     @Test
     public void testInitialPrice() {
         System.out.println("testInitialPrice");
-        Promotion instance = new Promotion();
-
         Float price = 0.0F;
         Float expectedResult = 10.0F;
         instance.InitialPrice(10.0F);
