@@ -16,7 +16,6 @@ public class Promotion {
      *
      * @param stableDays Stable days.
      */
-
     Float price = 0.0F;
     Float reducedPrice = 0.0F;
     int stableDays = 0;
@@ -63,6 +62,19 @@ public class Promotion {
         this.reducedPrice = reducedPrice;
 
         return true;
+    }
+
+    /**
+     * Determines is a promotion is Valid.
+     *
+     * @return true, if a promotion is valid otherwise false.
+     */
+    public Boolean promotionValid() {
+
+        if ((stableDays >= 31) && (reducedPrice.compareTo(0.0F) == 0)) {
+            return true;
+        }
+        return false;
     }
 
 }
