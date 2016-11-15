@@ -24,5 +24,13 @@ public class Promotion {
         this.stableDays = stableDays;
     }
 
+      /**
+     * InitialPrice. Sets the Price for start of test.
+     *
+     * @param price Price value.
+     */
+    public void InitialPrice(Float price) {
+        this.price = price;
+    }
     
 }
