@@ -248,5 +248,34 @@ public class PromotionTest {
         int result = instance.stableDays;
         assertEquals(expectedResult, result);
     }
+    
+    
+    @Test
+    public void TestcostIncreasePrice() {
+        System.out.println("costIncreasePrice");
+        Float initPrice = 10.0F;
+        Float reducedPrice = 8.0F;
+        Float expectedResult = 11.0F;
+        instance.InitialPrice(initPrice);
+        instance.furtherPriceReduction(reducedPrice);
+        Float priceIncrease = 11.0F;
+        instance.costIncrease(priceIncrease);
+        Float result = instance.price;
+        assertEquals(expectedResult, result, 0.001F);
+    }
+
+    @Test
+    public void testCostIncreaseDays() {
+        System.out.println("costIncreaseDays");
+        Float initPrice = 10.0F;
+        Float reducedPrice = 8.0F;
+        int expectedResult = 0;
+        instance.InitialPrice(initPrice);
+        instance.furtherPriceReduction(reducedPrice);
+        Float priceIncrease = 11.0F;
+        instance.costIncrease(priceIncrease);
+        int result = instance.stableDays;
+        assertEquals(expectedResult, result);
+    }
 
 }
