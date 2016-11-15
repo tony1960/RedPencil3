@@ -108,6 +108,18 @@ public class Promotion {
 
     }
 
-    
+    /**
+     * Increases the cost of an item. sets reducedPrice and StableDays to zero
+     *
+     * @param price The price to increase to.
+     */
+    public void costIncrease(Float price) {
+        if (reducedPrice.compareTo(price) < price) {
+            this.price = price;
+            reducedPrice = 0.0F;
+            stableDays = 0;
+        }
+    }
+
 
 }
