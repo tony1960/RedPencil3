@@ -62,8 +62,8 @@ public class PromotionTest {
 
         assertEquals(expectedResult, result, 0.01);
     }
-    
-       @Test
+
+    @Test
     public void testPriceReductionInRange() {
         System.out.println("testPriceReductionInRange");
         Float initPrice = 10.0F;
@@ -74,6 +74,19 @@ public class PromotionTest {
 
         assertTrue("Promotion", result);
     }
+// adding test for out of Range Low, Low End point, Hight End Point and High
+    //  high out of range 
 
+    @Test
+    public void testPriceReductiomLowEnd() {
+        System.out.println("testPriceReductiomLowEnd");
+        Float initPrice = 10.0F;
+        instance.InitialPrice(initPrice);
+        int days = 31;
+        instance.InitialStableDays(days);
+        Boolean result = instance.priceReduction(6.00F);
+
+        assertFalse("Promotion", result);
+    }
 
 }
