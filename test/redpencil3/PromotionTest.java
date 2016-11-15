@@ -216,5 +216,37 @@ public class PromotionTest {
         assertTrue("Promotion", result);
     }
 
-    // 
+    //
+    
+        
+    
+    
+    @Test
+    public void testFurtherPriceReductionRange() {
+        System.out.println("testFurtherPriceReductionOutofRangePrice");
+
+        Float initPrice = 10.0F;
+        instance.InitialPrice(initPrice);
+        Float expectedResult = 7.0F;
+        instance.priceReduction(8.0F);
+        Float futherReduction = 7.0F;
+        instance.furtherPriceReduction(futherReduction);
+        Float result = instance.reducedPrice;
+        assertEquals(expectedResult, result, .001);
+    }
+
+    @Test
+    public void testFurtherPriceReductionOutofRange() {
+        System.out.println("testFurtherPriceReductionOutofRangeDays");
+
+        Float initPrice = 10.0F;
+        instance.InitialPrice(initPrice);
+        int expectedResult = 0;
+        instance.priceReduction(8.0F);
+        Float futherReduction = 6.0F;
+        instance.furtherPriceReduction(futherReduction);
+        int result = instance.stableDays;
+        assertEquals(expectedResult, result);
+    }
+
 }
