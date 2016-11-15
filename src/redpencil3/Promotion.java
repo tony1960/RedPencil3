@@ -120,6 +120,22 @@ public class Promotion {
             stableDays = 0;
         }
     }
+    
+    
+    /**
+     * Determines is a promotion is Valid.
+     *
+     * @return true, if an addition promotion is valid otherwise false.
+     */
+    public Boolean addtionalPromotionValid() {
+
+        if (reducedPrice.compareTo(0.0F) > 0) {
+            return false;
+        }
+
+        return stableDays > 30;
+    }
+
 
 
 }
