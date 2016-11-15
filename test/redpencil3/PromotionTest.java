@@ -62,5 +62,18 @@ public class PromotionTest {
 
         assertEquals(expectedResult, result, 0.01);
     }
+    
+       @Test
+    public void testPriceReductionInRange() {
+        System.out.println("testPriceReductionInRange");
+        Float initPrice = 10.0F;
+        instance.InitialPrice(initPrice);
+        int days = 31;
+        instance.InitialStableDays(days);
+        Boolean result = instance.priceReduction(9.00F);
+
+        assertTrue("Promotion", result);
+    }
+
 
 }
