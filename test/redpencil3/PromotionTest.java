@@ -17,22 +17,22 @@ import static org.junit.Assert.*;
  * @author tonys
  */
 public class PromotionTest {
-    
+
     public PromotionTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -48,5 +48,18 @@ public class PromotionTest {
 
         assertEquals(expectedResult, result);
     }
-    
+
+    @Test
+    public void testInitialPrice() {
+        System.out.println("testInitialPrice");
+        Promotion instance = new Promotion();
+
+        Float price = 0.0F;
+        Float expectedResult = 10.0F;
+        instance.InitialPrice(10.0F);
+        Float result = instance.price;
+
+        assertEquals(expectedResult, result, 0.01);
+    }
+
 }
